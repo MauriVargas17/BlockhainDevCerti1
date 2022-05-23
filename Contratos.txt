@@ -1,5 +1,21 @@
 Contracts 
 
+Ethereum
+
+function getMessage() public view returns(string memory) {
+        return message;
+    }
 0xD1eC8eE9500CEe59a6a385A294Fb12773901947e con view
 
+
+function getMessage() public returns(string memory) {
+        return message;
+    }
 0x017923f7A2A0B4736EeD5e4af20C43c575a31EAa sin view
+
+BNB 
+
+function getMessage() public view returns(string memory) {
+        return message;
+    }
+0xe9838F527C4474284Ea9ee0041257C4221a4fdEC 
