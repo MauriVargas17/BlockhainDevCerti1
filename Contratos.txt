@@ -1,6 +1,6 @@
-Contracts 
+------ Contracts 
 
-Ethereum
+Ethereum Rinkeby Testnet
 
 function getMessage() public view returns(string memory) {
         return message;
@@ -13,7 +13,7 @@ function getMessage() public returns(string memory) {
     }
 0x017923f7A2A0B4736EeD5e4af20C43c575a31EAa sin view
 
-BNB 
+Binance Smart Chain Testnet
 
 function getMessage() public view returns(string memory) {
         return message;
