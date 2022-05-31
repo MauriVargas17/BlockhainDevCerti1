@@ -8,6 +8,7 @@ contract Inbox{
 
     constructor(string memory initialMessage){
         message = initialMessage;
+        ownerAddress = msg.sender;
     }
 
     function getMessage() public view returns(string memory) {
