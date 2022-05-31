@@ -15,3 +15,13 @@ contract('Inbox', accounts => {
         assert.equal(message, "Hi Mauri");
     })
 })
+
+it('setMessage message not changed by others', async () => {
+        try{
+            const instance = await Inbox.deployed();
+            await instance.setMessage("hey", {from: accounts[1]});
+        } catch (e) {
+            console.log('Error!', e);
+            assert.equal(e.reason, "Only the owner can modify the message");
+        }
+    })
