@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 
-
 contract Lottery{
 
     address[] public players;
@@ -33,6 +32,10 @@ contract Lottery{
     modifier onlyOwner{
         require(msg.sender == owner, "Only owner can execute this function");
         _;
+    }
+
+    function getPlayers() public view returns (address[] memory){
+        return players;
     }
 
 
