@@ -70,4 +70,5 @@ contract("Testing dude", accounts => {
         const players = await instance.getPlayers.call();
         assert(players.length == 0);
     })
+    
 })
