@@ -59,7 +59,43 @@ function App() {
         }
     }
 
-    const registration = async () => {
+    const loadBalance = async () => {
+        // @ts-ignore
+        const Web3 = window.web3;
+        const balance = await Web3.eth.getBalance(contract.options.address);
+        await setBalance(balance);
+    }
+
+    const loadPlayers = async () => {
+        const players = await contract.methods.getPlayers().call();
+        await setPlayers(players);
+    }
+
+    const onPickWinner = async () => {
+        //@ts-ignore
+        const Web3 = window.web3;
+        const accounts = await Web3.eth.getAccounts();
+
+        setMessage(
+            "Waiting for transaction confirmation"
+        )
+
+        await contract.methods.pickWinner().send({
+            from: accounts[0],
+        })
+
+        setMessage(
+            "We have a winner!"
+        )
+
+
+        loadPlayers();
+        loadBalance();
+
+
+    }
+
+    const onRegistration = async () => {
         //@ts-ignore
         const Web3 = window.web3;
 
@@ -69,7 +105,6 @@ function App() {
             "Waiting for transaction confirmation"
         )
 
-
         await contract.methods.registerPlayer().send({
             from: accounts[0],
             value: Web3.utils.toWei(value, "ether")
@@ -78,6 +113,8 @@ function App() {
         setMessage(
             "Request successful. You have been registered"
         )
+        loadPlayers();
+        loadBalance();
     }
 
   return (
@@ -91,14 +128,16 @@ function App() {
           <p>Hi React, Truffle and Firebase</p>
           <button onClick = {() => connectWallet()}>Connect</button>
 
+          <button onClick = {() => onPickWinner()}>Pick Winner!</button>
+
           <p>Players: {players.length}</p>
           <p>Balance: {balance}</p>
           <p>Owner: {manager}</p>
 
           <p>Minimum amount to participate: 2.1 ETH</p>
           <input type = 'text' value = {value} onChange = {(event) => {setValue(event.target.value)}}/>
-          <button onClick={() => {registration()}}>Register NOW</button>
-          
+          <button onClick={() => {onRegistration()}}>Register NOW</button>
+
           <p>{message}</p>
       </header>
     </div>
