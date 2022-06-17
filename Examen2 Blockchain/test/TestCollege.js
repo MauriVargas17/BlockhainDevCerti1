@@ -90,21 +90,29 @@ contract("Testing exam 2", accounts => {
             const note = await instance.listNotes.call(5);
             console.log("Que no pro");
             console.log(note.finalized);
-            console.log(note.typeTest.negative);
+            console.log(note.typeTest.words[0]);
             console.log("Holas")
             assert.equal(note.finalized, true);
-            assert.equal(note.typeTest.negative, 1);
+            assert.equal(note.typeTest.words[0], 1);
 
             const price = "11";
             const iBalance = accounts[5].balance;
-            await instance.request2T(5,{from: accounts[0], value: web3.utils.toWei(price, "ether")});
-            const fBalance = accounts[5].balance;
-            assert.equal(note.finalized, false);
-            assert.equal(note.typeTest.negative, 2);
-            const diff = iBalance - fBalance
-            assert(10 <= diff);
+            try {
+                await instance.request2T(5,{from: accounts[0], value: web3.utils.toWei(price, "ether")});
+                const fBalance = accounts[5].balance;
+                console.log(note.typeTest);
+                assert.equal(note.finalized, false);
+                assert.equal(note.typeTest.words[0], 2);
+                const diff = iBalance - fBalance
 
-            console.log(diff);
+                assert(10 <= diff);
+
+                console.log(diff);
+            }catch (e) {
+                console.log("Error", e);
+                assert.equal("Your test 1P was not reviewed.", e.reason);
+            }
+
 
 
     })
