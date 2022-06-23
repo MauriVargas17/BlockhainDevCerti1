@@ -24,7 +24,7 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 const hdWallet = require("truffle-hdwallet-provider");
-const mnemonic = "verify sense output trigger team capital digital one wife lyrics loop weird"
+const mnemonic = "a b c d e f g"
 
 module.exports = {
   /**
