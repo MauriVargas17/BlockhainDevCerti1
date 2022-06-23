@@ -6,3 +6,7 @@ Contrato deployado con Truffle e Infura: 0xEFE1377CFfAdEa619cDAf314f87d09A5591C2
 ## Rinkeby
 Contrato deployado con Hardhat y Alchemy: 0xe9838F527C4474284Ea9ee0041257C4221a4fdEC
 
+## Goerli
+Contrato deployado con Hardhat y Alchemy: 0xEFE1377CFfAdEa619cDAf314f87d09A5591C2f4a
+
+
