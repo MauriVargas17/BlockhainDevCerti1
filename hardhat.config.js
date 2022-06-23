@@ -21,11 +21,11 @@ module.exports = {
   networks: {
     goerly: {
       url: 'https://eth-goerli.alchemyapi.io/v2/tMa46UHUgdarfLImx6jrhT3ty7x4IbJ7' ,
-      accounts: ['8fb8fd8072a471e8999616e01fecb637af7b890e8544cff7fc36187f6959b618']
+      accounts: ['6']
     },
     rinkeby: {
       url: 'https://eth-rinkeby.alchemyapi.io/v2/tMa46UHUgdarfLImx6jrhT3ty7x4IbJ7' ,
-      accounts: ['8fb8fd8072a471e8999616e01fecb637af7b890e8544cff7fc36187f6959b618']
+      accounts: ['6']
     }
 
 
