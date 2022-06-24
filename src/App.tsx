@@ -32,11 +32,11 @@ function App() {
         // @ts-ignore
         const Web3 = window.web3;
 
-        const networkData = lotteryContract.networks['97'];
-        console.log('networkData: ', networkData);
+//         const networkData = lotteryContract.networks['97'];
+//         console.log('networkData: ', networkData);
 
         if(networkData){
-            const abi = lotteryContract.abi;
+//             const abi = lotteryContract.abi;
             const address = networkData.address;
             console.log('address: ', address);
             const deployedContract = await new Web3.eth.Contract(abi, address);
