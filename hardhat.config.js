@@ -26,6 +26,13 @@ module.exports = {
     rinkeby: {
       url: 'https://eth-rinkeby.alchemyapi.io/v2/tMa46UHUgdarfLImx6jrhT3ty7x4IbJ7' ,
       accounts: ['6']
+    },
+    bscTestnet: {
+      url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+      chainId: 97,
+      accounts: {
+        mnemonic: ""
+      }
     }
 
 
