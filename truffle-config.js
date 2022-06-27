@@ -65,6 +65,10 @@ module.exports = {
       timeoutBlocks: 200,
       skiDryRun: true
 
+    },
+     ethereum: {
+      provider: () => new hdWallet(mnemonic, "https://mainnet.infura.io/v3/fed32599b1474e359639ecaa4acf1f32"),
+      network_id: 1
     }
 
     //
